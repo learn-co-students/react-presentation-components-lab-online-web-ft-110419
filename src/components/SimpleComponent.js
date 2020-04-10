@@ -8,21 +8,9 @@ class SimpleComponent extends Component {
         }
     }
 
-    handleClick = (event) => {
-        let newMood
-        switch(this.state.mood){
-            case 'happy':
-                newMood = 'sad'
-                break
-            case 'sad':
-                newMood = 'happy'
-                break
-            default:
-                alert("ERROR IN STATE")
-        }
-        this.setState({
-            mood: newMood
-        })
+    handleClick = () => {
+        const newMood = this.state.mood === 'happy' ? 'sad' : 'happy';
+        this.setState({ mood: newMood });
     }
 
     render() {
